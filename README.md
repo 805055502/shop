@@ -88,7 +88,7 @@ server {
 
 ## 上线验证与维护
 
-2026-10-16 上线前检查：两个 HTTPS 域名均返回首页 `200`，`/robots.txt` 与 `/sitemap.xml` 尚返回 `404`，测试的不存在路径返回 `404`。部署辅助文件后需重新验证，以上记录不代表新版本已上线。
+2026-10-16 部署后复查：首页新版标题与 canonical 已生效，`/robots.txt` 与 `/sitemap.xml` 均返回 `200`，未发现首页 `noindex` 标签或响应头。HTTP 首页与 HTTPS www 首页仍直接返回 `200`，尚需按上面的规则统一跳转；真实爬虫抓取、平台索引状态及关键词效果仍待站长平台数据确认。
 
 - 检查普通浏览器与搜索引擎实际抓取均能直接取得页面及静态资源；无登录、`noindex` 响应头或 WAF/机器人挑战阻挡。仅更换 User-Agent 无法证明真实 Googlebot 可访问，应结合站长平台 URL 检查和服务器日志确认。
 - 检查上表中的状态码、Location 和查询参数，确认无循环；确认首页 HTML 的 canonical 为 `https://fomo9527.top/`。可用 `curl.exe -I "https://www.fomo9527.top/index.html?utm_source=test"` 检查首跳，再用 `curl.exe -IL "https://www.fomo9527.top/index.html?utm_source=test"` 检查完整链路。
@@ -98,6 +98,8 @@ server {
 
 ### 四个平台验证与提交
 
+方法核验日期：**2026-10-16**。以下依据当前可访问的官方公开文档及提交入口；公开页面访问成功不代表已核实登录后的账号权限，也不代表规则于当天发布。实际后台功能、验证值与提交额度以当前账号为准。
+
 先确保正式首页与 `https://fomo9527.top/sitemap.xml` 已部署且公开可访问。验证文件、HTML 标签或 DNS 记录必须使用各平台为当前账号实际生成的值，验证成功后保留；不要使用示例验证码。
 
 | 平台 | 验证与提交步骤 | 后续检查 |
@@ -106,6 +108,8 @@ server {
 | Bing | 登录 [Bing Webmaster Tools](https://www.bing.com/webmasters/)，添加 `https://fomo9527.top/`，按后台提供的方式验证；若 Google 已验证，也可按提示从 Search Console 导入。在 Sitemaps 中提交 `https://fomo9527.top/sitemap.xml`。 | 查看 sitemap 处理结果、URL 检查及搜索表现。[入门说明](https://www.bing.com/webmasters/help/getting-started-checklist-66a806de)、[Sitemaps 说明](https://www.bing.com/webmasters/help/sitemaps-3b5cf6ed) |
 | 百度 | 在[站点管理](https://ziyuan.baidu.com/site/index)添加正式站点，按登录后实际提供的方式验证。进入[普通收录](https://ziyuan.baidu.com/linksubmit/index)，选择已验证站点提交首页链接；若账号当前开放 sitemap 入口，再提交 `https://fomo9527.top/sitemap.xml`。 | 检查抓取诊断、抓取异常、Robots、索引量及流量与关键词。普通收录帮助发现网址，不保证收录；提交方式和权限以当前账号为准。 |
 | 搜狗 | 登录[搜狗搜索资源平台](https://zhanzhang.sogou.com/)，在“用户中心 → 网站管理”添加站点，按[验证帮助](https://zhanzhang.sogou.com/index.php/help/siteVerify)完成文件或 HTML 标签验证；部分功能还需资质审核。在[资源收录](https://zhanzhang.sogou.com/index.php/sitelink/index)提交 `https://fomo9527.top/`，避免重复提交。 | 当前资源收录入口明确**仅支持页面 URL，不支持 sitemap 文件**，不要将 XML 文件作为页面提交。观察收录索引、抓取及关键词数据。公开入口本次可访问，登录后的功能与资质要求以实际账号为准。 |
+
+Bing 的[当前网址提交指南](https://www.bing.com/webmasters/help/URL-Submission-62f2860b)优先推荐 IndexNow。若后续接入更新通知，按 [IndexNow 官方协议](https://www.indexnow.org/documentation)部署所有权验证文件，在页面新增、更新或删除时通知变化的 URL；成功回执只表示网址已被接收，不代表已抓取、收录或获得排名。当前项目尚未接入或提交 IndexNow。
 
 提交后分别记录各平台的验证结果、提交时间、抓取/索引状态及上述目标词的展示和点击。HTTP `200`、本地结构检查、伪装爬虫 User-Agent 的请求成功，都不能作为真实爬虫已抓取或搜索已收录的证据；以平台报告和经身份核实的服务器爬虫日志交叉确认。抓取、索引和关键词展示是不同阶段，不重复提交来催促排名。搜狗关于文本内容、页面标题和原创信息的要求见[官方站长指南](https://help.sogou.com/guide.html)。
 
