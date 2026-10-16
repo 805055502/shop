@@ -3,19 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI账号与额度卡 | 自动发货 · 即买即用</title>
-  <meta name="description" content="专业AI账号、额度卡、激活码自动发货平台，支持多种主流AI服务，付款后秒到账，安全可靠。">
-  <meta name="keywords" content="AI账号,ChatGPT,额度卡,自动发货,卡密">
+  <title>AI 代充与账号 | 天才程序员加油站</title>
+  <meta name="description" content="天才程序员加油站提供 ChatGPT、Claude、Gemini、Grok 等 AI 服务的代充与账号选购说明。了解套餐类型、卡密自动发货流程和购买常见问题，前往店铺查看实时价格、库存与使用规则。">
+  <meta name="theme-color" content="#0b0f19">
+  <link rel="canonical" href="https://fomo9527.top/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="天才程序员加油站">
+  <meta property="og:title" content="AI 代充与账号 | 天才程序员加油站">
+  <meta property="og:description" content="了解 AI 代充与账号的套餐类型、自动发货流程与购买常见问题，前往店铺查看实时价格和库存。">
+  <meta property="og:url" content="https://fomo9527.top/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI 代充与账号 | 天才程序员加油站">
+  <meta name="twitter:description" content="了解 AI 服务套餐、卡密自动发货流程与购买常见问题，前往店铺查看实时价格和库存。">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://fomo9527.top/#website",
+          "url": "https://fomo9527.top/",
+          "name": "天才程序员加油站",
+          "inLanguage": "zh-CN"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://fomo9527.top/#webpage",
+          "url": "https://fomo9527.top/",
+          "name": "AI 代充与账号 | 天才程序员加油站",
+          "description": "AI 代充与账号的选购说明、自动发货流程和购买常见问题。",
+          "inLanguage": "zh-CN",
+          "isPartOf": { "@id": "https://fomo9527.top/#website" }
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #0b0f19;
       --card: #131a2a;
       --border: rgba(255, 255, 255, 0.08);
       --text: #e8eef7;
-      --muted: #8b9bb4;
-      --primary: #3b82f6;
-      --primary-2: #06b6d4;
-      --accent: #22d3ee;
+      --muted: #a3b1c7;
+      --primary: #1d4ed8;
+      --primary-2: #0e7490;
       --glow: rgba(59, 130, 246, 0.35);
     }
 
@@ -28,6 +61,34 @@
       line-height: 1.7;
       min-height: 100vh;
     }
+
+    a { color: #93c5fd; text-underline-offset: 4px; }
+
+    :focus-visible { outline: 3px solid #22d3ee; outline-offset: 5px; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 8px;
+      left: 20px;
+      z-index: 2;
+      padding: 8px 16px;
+      background: var(--card);
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
 
     .bg-glow {
       position: fixed;
@@ -52,24 +113,31 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .logo {
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      text-decoration: none;
       background: linear-gradient(90deg, #fff, #93c5fd);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .header-tag {
-      font-size: 13px;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 999px;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 20px;
+      font-size: 14px;
     }
+
+    nav a { padding: 10px 2px; text-decoration: none; }
+
+    nav a:hover { text-decoration: underline; }
 
     .hero {
       text-align: center;
@@ -92,6 +160,10 @@
       max-width: 620px;
       margin: 0 auto 32px;
     }
+
+    .hero .eyebrow { font-size: 14px; color: #93c5fd; margin-bottom: 14px; }
+
+    .hero .hero-note { font-size: 13px; margin: 16px auto 0; }
 
     .btn {
       display: inline-flex;
@@ -118,7 +190,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 18px;
-      margin: 50px 0 40px;
+      margin: 24px 0 40px;
     }
 
     .card {
@@ -155,11 +227,41 @@
       color: var(--muted);
     }
 
+    .section-intro {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
     .section-title {
       text-align: center;
       font-size: 22px;
       margin: 50px 0 20px;
     }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      list-style: none;
+      counter-reset: purchase;
+    }
+
+    .steps li { counter-increment: purchase; }
+
+    .steps h3::before { content: "0" counter(purchase) " / "; color: #93c5fd; }
+
+    .notice { color: var(--muted); font-size: 14px; margin: 20px 0; }
+
+    .faq { max-width: 800px; margin: 0 auto; }
+
+    .faq details { border-bottom: 1px solid var(--border); padding: 18px 0; }
+
+    .faq summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
+
+    .faq p { margin-top: 12px; color: var(--muted); font-size: 15px; }
 
     .cta-box {
       text-align: center;
@@ -188,54 +290,124 @@
       border-top: 1px solid var(--border);
     }
 
+    footer p + p { margin-top: 8px; }
+
     @media (max-width: 640px) {
       .hero h1 { font-size: 30px; }
       .hero { padding: 40px 0 30px; }
       header { flex-direction: column; gap: 10px; }
+      .features, .steps { grid-template-columns: 1fr; }
+      .cta-box h2 { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn, .card { transition: none; }
+      .btn:hover { transform: none; }
     }
   </style>
 </head>
 <body>
-  <div class="bg-glow"></div>
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  <div class="bg-glow" aria-hidden="true"></div>
 
   <div class="container">
     <header>
-      <div class="logo">天才程序员加油站</div>
-      <div class="header-tag">自动发货 · 即买即用</div>
+      <a class="logo" href="/">天才程序员加油站</a>
+      <nav aria-label="页面导航">
+        <a href="#services">商品类型</a>
+        <a href="#guide">购买流程</a>
+        <a href="#faq">常见问题</a>
+      </nav>
     </header>
 
-    <section class="hero">
-      <h1>主流 AI 代充<br>付款后秒到账</h1>
-      <p>精选 ChatGPT、Claude、Gemini、Grok 等热门服务，支持日卡、周卡、月卡，全程自动发货，无需等待。</p>
-      <a href="https://wzyp.cn/shop/fomo" class="btn" target="_blank">进入店铺购买</a>
-    </section>
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">AI 服务选购 · 卡密自动发货</p>
+        <h1 id="hero-title">AI 代充与账号<br>按需选择适合你的套餐</h1>
+        <p>了解 ChatGPT、Claude、Gemini、Grok 等 AI 服务的商品类型，按使用时长、会员权益和交付方式选择。具体在售商品、价格与库存以店铺页面为准。</p>
+        <a href="https://wzyp.cn/shop/fomo" class="btn" target="_blank" rel="noopener noreferrer">查看 AI 商品与套餐<span class="sr-only">（在新窗口打开）</span></a>
+      </section>
 
-    <div class="features">
-      <div class="card">
-        <div class="card-icon">⚡</div>
-        <h3>自动发货</h3>
-        <p>支付成功后系统自动发放卡密，无需人工处理，24小时可用。</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3>安全可靠</h3>
-        <p>资金直达商家，平台不经手，交易记录清晰可查。</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📦</div>
-        <h3>品类丰富</h3>
-        <p>覆盖主流 AI 工具账号、API 额度、会员时长等多种选择。</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">💬</div>
-        <h3>售后保障</h3>
-        <p>问题订单可联系处理，优先解决卡密异常与使用问题。</p>
-      </div>
-    </div>
+      <section id="services" aria-labelledby="services-title">
+        <h2 id="services-title" class="section-title">AI 商品类型与选购说明</h2>
+        <p class="section-intro">AI 代充与账号的交付方式和使用范围不同。下单前请核对商品说明，确认服务名称、有效期、会员权益及使用限制。</p>
+        <div class="features">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">⚡</div>
+            <h3>AI 代充与会员时长</h3>
+            <p>关注服务版本、充值对象与生效时间。选择日卡、周卡或月卡等时长套餐时，先确认有效期从何时起算，以及是否需要兑换或激活。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🔑</div>
+            <h3>AI 账号与激活码</h3>
+            <p>关注账号类型、登录方式与激活步骤。账号商品和激活码的使用流程不同，请按对应商品说明操作，并妥善保存交付信息。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">💬</div>
+            <h3>自动发货与订单处理</h3>
+            <p>支持自动发货的卡密商品，在支付确认后按订单页面提示领取。若出现未收到卡密、激活异常等问题，请保留订单信息并通过店铺公布的渠道联系处理。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="guide" aria-labelledby="guide-title">
+        <h2 id="guide-title" class="section-title">如何购买和领取卡密</h2>
+        <p class="section-intro">先确认商品适用范围，再完成付款和领取，减少买错套餐或无法激活的情况。</p>
+        <ol class="steps">
+          <li class="card">
+            <h3>选择商品</h3>
+            <p>进入店铺，查看在售服务与套餐。核对价格、库存、有效期、交付方式及售后规则后再下单。</p>
+          </li>
+          <li class="card">
+            <h3>完成支付</h3>
+            <p>按店铺订单页面提示付款，保存订单编号和查询信息。请以订单支付状态为准，支付结果未确认时先查询订单。</p>
+          </li>
+          <li class="card">
+            <h3>领取并使用</h3>
+            <p>支付确认后，按订单页面提示获取卡密或查看交付进度。根据商品说明完成兑换、激活或登录。</p>
+          </li>
+        </ol>
+        <p class="notice">卡密发放与服务生效是不同环节；实际交付时间、使用方法和售后范围以具体商品及订单页面说明为准。</p>
+      </section>
+
+      <section id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" class="section-title">AI 服务购买常见问题</h2>
+        <div class="faq">
+          <details>
+            <summary>在哪里查看 ChatGPT、Claude、Gemini、Grok 的在售套餐？</summary>
+            <p>请前往<a href="https://wzyp.cn/shop/fomo" target="_blank" rel="noopener noreferrer">天才程序员加油站店铺（新窗口）</a>查看当前商品列表。服务种类、套餐时长、价格和库存可能调整，本页不提供实时商品报价。</p>
+          </details>
+          <details>
+            <summary>AI 账号和会员代充有什么区别？</summary>
+            <p>账号类商品按说明提供登录或使用方式；会员代充涉及指定服务的会员权益和时长。两者的适用平台、权益和交付方式不同，下单前请确认商品类型是否符合你的使用需求。</p>
+          </details>
+          <details>
+            <summary>付款后在哪里领取卡密，是否立即生效？</summary>
+            <p>支持自动发货的商品，在支付确认后按店铺订单页面提示领取卡密。卡密可能还需要兑换或激活，发货完成不一定代表服务已生效；具体步骤和处理时间请查看商品说明。</p>
+          </details>
+          <details>
+            <summary>日卡、周卡、月卡应该如何选择？</summary>
+            <p>可先按预计使用周期选择时长，再比较会员权益、功能和使用限制。下单前确认有效期的起算方式、到期规则及是否支持续费，具体可选规格以店铺当前上架商品为准。</p>
+          </details>
+          <details>
+            <summary>未收到卡密或激活失败怎么办？</summary>
+            <p>先确认订单是否支付成功，再核对商品的领取和激活说明。如果仍有异常，请保留订单编号、付款凭证和错误提示，通过店铺公布的售后渠道联系处理。</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="cta-box" aria-labelledby="shop-title">
+        <h2 id="shop-title">查看当前在售 AI 商品</h2>
+        <p>前往店铺比较套餐，确认价格、库存与使用规则后再购买。</p>
+        <a href="https://wzyp.cn/shop/fomo" class="btn" target="_blank" rel="noopener noreferrer">进入天才程序员加油站店铺<span class="sr-only">（在新窗口打开）</span></a>
+      </section>
+    </main>
 
     <footer>
-      <p>本页面仅作介绍展示，购买与发货由链动小铺店铺完成</p>
-      <p style="margin-top: 6px;">© 2026 天才程序员加油站</p>
+      <p>天才程序员加油站 · AI 服务选购说明与店铺入口</p>
+      <p>购买与发货由链动小铺店铺完成。商品价格、库存、交付和售后规则以店铺说明为准。</p>
+      <p>页面提及的服务名称用于说明商品适用范围，不代表本店与相应服务提供方存在官方隶属或授权关系。</p>
+      <p>© 2026 天才程序员加油站 · <a href="/sitemap.xml">网站地图</a></p>
     </footer>
   </div>
 </body>
