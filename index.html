@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI账号与额度卡 | 自动发货 · 即买即用</title>
+  <meta name="description" content="专业AI账号、额度卡、激活码自动发货平台，支持多种主流AI服务，付款后秒到账，安全可靠。">
+  <meta name="keywords" content="AI账号,ChatGPT,额度卡,自动发货,卡密">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #131a2a;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e8eef7;
+      --muted: #8b9bb4;
+      --primary: #3b82f6;
+      --primary-2: #06b6d4;
+      --accent: #22d3ee;
+      --glow: rgba(59, 130, 246, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(800px 400px at 80% -10%, rgba(59, 130, 246, 0.18), transparent 60%),
+        radial-gradient(600px 300px at 10% 110%, rgba(6, 182, 212, 0.12), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      padding: 28px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #fff, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-tag {
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #ffffff, #93c5fd 50%, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px var(--glow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(59, 130, 246, 0.45);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin: 50px 0 40px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(59, 130, 246, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 22px;
+      margin: 50px 0 20px;
+    }
+
+    .cta-box {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.08), transparent);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 20px;
+      margin: 40px 0 60px;
+    }
+
+    .cta-box h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 30px; }
+      .hero { padding: 40px 0 30px; }
+      header { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <div class="container">
+    <header>
+      <div class="logo">天才程序员加油站</div>
+      <div class="header-tag">自动发货 · 即买即用</div>
+    </header>
+
+    <section class="hero">
+      <h1>主流 AI 代充<br>付款后秒到账</h1>
+      <p>精选 ChatGPT、Claude、Gemini、Grok 等热门服务，支持日卡、周卡、月卡，全程自动发货，无需等待。</p>
+      <a href="https://wzyp.cn/shop/fomo" class="btn" target="_blank">进入店铺购买</a>
+    </section>
+
+    <div class="features">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>自动发货</h3>
+        <p>支付成功后系统自动发放卡密，无需人工处理，24小时可用。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>安全可靠</h3>
+        <p>资金直达商家，平台不经手，交易记录清晰可查。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>品类丰富</h3>
+        <p>覆盖主流 AI 工具账号、API 额度、会员时长等多种选择。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h3>售后保障</h3>
+        <p>问题订单可联系处理，优先解决卡密异常与使用问题。</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>本页面仅作介绍展示，购买与发货由链动小铺店铺完成</p>
+      <p style="margin-top: 6px;">© 2026 天才程序员加油站</p>
+    </footer>
+  </div>
+</body>
+</html>
