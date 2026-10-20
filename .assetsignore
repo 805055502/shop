@@ -1,0 +1,14 @@
+# Publish only the static site when Wrangler detects the repository root.
+*
+!/index.html
+!/styles.css
+!/chatgpt/
+!/chatgpt/index.html
+!/404.html
+!/favicon.png
+!/favicon.ico
+!/favicon.svg
+!/robots.txt
+!/sitemap.xml
+!/_redirects
+!/indexnow-key.txt
