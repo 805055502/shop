@@ -1,4 +1,3 @@
 # Cloudflare Pages / Workers Static Assets: merge the explicit homepage URL.
 # Hostname and HTTP redirects must be configured in Cloudflare Redirect Rules.
 /index.html / 301
-/chatgpt/index.html /chatgpt/ 301

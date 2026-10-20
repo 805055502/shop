@@ -6,21 +6,11 @@
 
 重点查询词为 **ChatGPT 代充、Claude 代充、Codex 代充、Grok 代充**，同时观察 ChatGPT、Claude、Codex、Grok 单品牌词。查询词不等于独立商品分类：本店 Codex 相关需求归入 ChatGPT 套餐，仅作关联关键词覆盖，不单独介绍或列为一种代充服务。页面服务说明按实际商品分为 ChatGPT、Claude、Gemini、Grok，服务内容、购买方式与实际店铺保持一致；不堆砌关键词、不添加不存在的商品。单品牌词意图较宽，不能承诺以介绍页覆盖所有相关搜索。
 
-目标验收顺序为：**部署正式版本 → 各平台完成所有权验证 → 提交网址 → 确认抓取与索引 → 观察目标查询词的展示和点击**。2026-10-20 已通过用户登录的 Google Search Console 核实：首页已收录，上次抓取为 2026-10-16 15:56:07，Googlebot 智能手机版抓取成功，Google 选择的规范网址为 `https://fomo9527.top/`；sitemap 上次读取为 10 月 18 日，状态成功，发现 1 个页面。当前已报告的搜索展示、点击和外链均为 0（报告可能延迟，外链报告也不代表全部链接），未检测到人工处置或安全问题。用户的域名搜索截图也确认首页能展示；下一阶段验收服务词的展示和点击，而非只验收域名能搜到。其他平台状态仍以后台为准，不承诺指定排名。
-
-### 关键词与独立页面
-
-- `/` 保留四种真实服务的精简入口和一个购买按钮；现有 ChatGPT 标题链接至 `/chatgpt/`，不靠新增首页段落覆盖近义词。
-- `/chatgpt/` 承接 ChatGPT / GPT 代充、Plus / Pro 月卡的选购与兑换问题，包含真实在售选项、Plus 账号条件、卡密流程和查单入口。Codex 仍沿用首页的归属说明，不单独设商品或页面。
-- 该页资料核验于 2026-10-20 的公开店铺与 Plus 商品说明。价格、库存和权益经常变化，不写入固定报价或未核实的官方额度。新增页面独立 self-canonical，已纳入 sitemap；当日已发布，Google 实时测试通过，但尚未确认正式收录。
-- 需要扩大其他服务词覆盖时，先核实对应商品的独立用途和流程，再建设有区别的页面；不批量生成只替换品牌或“开通/购买/升级”字样的相似页。Google 当前指南重视实用、准确的内容，没有排名字数门槛。[有用内容指南](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)、[SEO 入门指南](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
-- 外链使用主域 `https://fomo9527.top/`。可在可编辑的真实店铺/品牌资料中使用“天才程序员加油站”作为自然链接文字；尚未对外发布任何公告或帖子，也未购买或群发链接。
+目标验收顺序为：**部署正式版本 → 四个平台完成真实所有权验证 → 提交网址 → 确认抓取与索引 → 观察目标查询词的展示和点击**。2026-10-16 用户提供的 Google Search Console 截图显示：首页实时测试通过，可编入索引；此前索引报告为“已发现 - 尚未编入索引”。这不代表已经收录，是否已请求编入索引及其他三个平台的验证状态仍以各自后台为准。SEO 可以改善发现和理解页面的条件，不能保证所有词在所有引擎中出现或获得指定排名。
 
 ## 部署
 
-将 `index.html`、`styles.css`、`chatgpt/` 文件夹、`404.html`、`favicon.png`、`favicon.ico`、`robots.txt`、`sitemap.xml`、`_redirects`、`indexnow-key.txt` 上传到站点根目录。`favicon.svg` 保留为图标源文件，可一并部署；`README.md` 与 `scripts/` 不需要上传。首页及资源应通过 HTTPS 公开访问；`robots.txt` 与 IndexNow 验证文件应返回纯文本，`sitemap.xml` 应返回 XML，不能被重写为首页 HTML。
-
-当前生产环境为 GitHub `main` 分支触发的 Workers Static Assets 自动部署，命令为 `npx wrangler deploy`，自动识别仓库根目录。`.assetsignore` 使用公开资源白名单，避免 README、脚本和仓库配置被作为页面发布；增加新资源时同步维护白名单。[Cloudflare 资源排除说明](https://developers.cloudflare.com/workers/static-assets/binding/#ignoring-assets)
+将 `index.html`、`404.html`、`favicon.png`、`favicon.ico`、`robots.txt`、`sitemap.xml`、`_redirects`、`indexnow-key.txt` 上传到站点根目录。`favicon.svg` 保留为图标源文件，可一并部署；`README.md` 与 `scripts/` 不需要上传。首页及资源应通过 HTTPS 公开访问；`robots.txt` 与 IndexNow 验证文件应返回纯文本，`sitemap.xml` 应返回 XML，不能被重写为首页 HTML。
 
 搜索图标使用 96×96 PNG，另提供 16/32/48 像素 ICO；沿用现有 SVG 的外观，不增加首页内容。Google 当前搜索图标规范列出的格式不包含 SVG，PNG/ICO 属于支持格式。[Google 搜索图标规范](https://developers.google.com/search/docs/appearance/favicon-in-search)
 
@@ -36,7 +26,7 @@
 | `https://www.fomo9527.top/index.html?utm_source=test` | `301/308` → `https://fomo9527.top/?utm_source=test` |
 | `https://fomo9527.top/not-a-real-page` | `404`，不能返回首页 `200` |
 
-2026-10-20 已在 Cloudflare 发布并验证 `SEO - HTTPS apex canonical`：HTTP 与 www 返回 `301` 到 HTTPS 主域，路径及查询参数保留，HTTPS 主域仍返回 `200`。显式首页跳转由已部署的 `_redirects` 处理。以下保留为重建配置时的参考，避免重复创建规则。
+以下是待配置示例，不代表已修改线上部署。
 
 ### Cloudflare Redirect Rules
 
@@ -53,7 +43,7 @@
 2. **统一 www 与 HTTP**，匹配条件：
 
    ```text
-   (http.host eq "www.fomo9527.top" or (http.host eq "fomo9527.top" and starts_with(http.request.full_uri, "http://")))
+   (http.host eq "www.fomo9527.top" or (http.host eq "fomo9527.top" and http.request.scheme eq "http"))
    ```
 
    动作选择 Dynamic，目标表达式为 `concat("https://fomo9527.top", http.request.uri.path)`，状态码 `301`，开启 **Preserve query string**。
@@ -102,14 +92,14 @@ server {
 
 ## 上线验证与维护
 
-2026-10-20 已通过 GitHub `main` 发布本轮静态资源，发布时 Cloudflare 版本 `e40393b9` 显示就绪、流量 100%。线上复查：首页、新 `/chatgpt/` 页面、CSS、robots 和新版 sitemap 均返回 `200`；新页面 self-canonical、首页内链和 sitemap 两个网址已确认；HTTP 与 www 返回 `301` 到 HTTPS 主域并保留路径和查询参数，显式详情页 `index.html` 返回 `301`，无效路径及非公开 README/脚本返回 `404`。Search Console 正式报告确认首页已收录；新页面在 16:50 实时测试显示“网址可编入 Google 索引”，检测到 1 项有效面包屑内容，尚未确认正式收录。其“请求编入索引”操作因无法连接 reCAPTCHA 服务失败，未确认提交成功，避免反复点击。随后成功提交更新后的 sitemap；Google 后台显示提交和上次读取日期均为 10 月 20 日、状态成功、已发现网页为 **2**，不等同于两个页面均已收录。
+2026-10-16 部署后复查：首页新版标题与 canonical 已生效，`/robots.txt` 与 `/sitemap.xml` 均返回 `200`，未发现首页 `noindex` 标签或响应头。HTTP 首页与 HTTPS www 首页仍直接返回 `200`，尚需按上面的规则统一跳转；真实爬虫抓取、平台索引状态及关键词效果仍待站长平台数据确认。
 
 同日访问检查中，PowerShell 请求返回 `200`，Python 默认客户端返回 Cloudflare `403 / 1010`。这表明存在客户端访问限制，不能据此认定真实搜索爬虫被拦。需在 Cloudflare **Security → Events** 中按请求时间、路径与命中规则核查，并结合站长平台抓取报告及真实爬虫身份确认；仅针对误拦规则调整，避免为 SEO 关闭所有安全防护。[Cloudflare 1010 说明](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1010/)
 
 - 检查普通浏览器与搜索引擎实际抓取均能直接取得页面及静态资源；无登录、`noindex` 响应头或 WAF/机器人挑战阻挡。仅更换 User-Agent 无法证明真实 Googlebot 可访问，应结合站长平台 URL 检查和服务器日志确认。
 - 检查上表中的状态码、Location 和查询参数，确认无循环；确认首页 HTML 的 canonical 为 `https://fomo9527.top/`。可用 `curl.exe -I "https://www.fomo9527.top/index.html?utm_source=test"` 检查首跳，再用 `curl.exe -IL "https://www.fomo9527.top/index.html?utm_source=test"` 检查完整链路。
 - 商品价格、时长、供货、交付或售后规则变更时，同步更新正文、标题/描述和相关结构化数据，并核对购买页，保持信息一致。不要加入没有依据的销量、评价或承诺。
-- sitemap 当前列出首页和 `/chatgpt/` 两个规范网址；后续新增独立可索引页面时再加入完整规范 URL。没有可靠修改时间时不填 `lastmod`，不机械刷新时间。
+- sitemap 当前只列真实首页；新增独立可索引页面时再加入完整规范 URL。没有可靠修改时间时不填 `lastmod`，不机械刷新时间。
 - 在站长平台持续观察抓取、索引、搜索词、点击和展示数据。提交 sitemap 或添加结构化数据不保证收录、排名或富结果展示。
 
 ### 四个平台验证与提交
@@ -133,9 +123,9 @@ Bing 的[当前网址提交指南](https://www.bing.com/webmasters/help/URL-Subm
 
 1. 将 `indexnow-key.txt` 与本版首页一起部署，确认 `https://fomo9527.top/indexnow-key.txt` 返回文件中的验证值。该文件是协议要求公开提供的所有权验证文件，不是 Cloudflare 或站长平台账号凭证；不要删除或改写为 HTML。
 2. 在项目根目录预览：`powershell -NoProfile -File .\scripts\submit-indexnow.ps1`。默认只输出待提交内容，不请求网络。
-3. 页面实际更新且部署完成后执行：`powershell -NoProfile -File .\scripts\submit-indexnow.ps1 -Submit`。脚本读取 sitemap 中的规范网址，先校验线上验证文件及每页的状态码、self-canonical 和 noindex 指令，再一次性向 `https://api.indexnow.org/indexnow` 通知这些页面；任何页面未部署、发生跳转或校验不通过则停止。
+3. 首页实际更新且部署完成后执行：`powershell -NoProfile -File .\scripts\submit-indexnow.ps1 -Submit`。脚本先校验线上验证文件及首页的状态码、规范网址和 noindex 指令，再向 `https://api.indexnow.org/indexnow` 通知唯一规范首页；线上文件未更新、内容不匹配、发生跳转或首页未就绪则停止。
 
-Cloudflare Crawler Hints 与手动脚本选择一种即可；无需定时或反复提交未变化的页面。当前脚本从 sitemap 读取首页与 `/chatgpt/`；大站或部分页面变更时应只通知实际变化的网址，不应按此小站用法反复全量提交。HTTP `200` 只表示接收，`202` 表示收到但验证密钥待处理，都不代表已抓取、收录或获得排名；HTTP `403/422/429` 等错误先按返回原因排查。IndexNow 仅面向参与协议的引擎，不是 Google、百度、搜狗全部通用的提交入口。2026-10-20 正式部署并通过线上预检后，已一次性通知这两个发生变化的网址；返回 **HTTP 202，验证密钥待处理**，尚未确认抓取或收录。[IndexNow 官方协议](https://www.indexnow.org/documentation)、[官方 FAQ](https://www.indexnow.org/faq)
+Cloudflare Crawler Hints 与手动脚本选择一种即可；无需定时或反复提交未变化的页面。脚本仅通知当前首页，新增或删除其他页面时需按实际变更调整 `urlList`。HTTP `200` 只表示接收，`202` 表示收到但验证密钥待处理，都不代表已抓取、收录或获得排名；HTTP `403/422/429` 等错误先按返回原因排查。IndexNow 仅面向参与协议的引擎，不是 Google、百度、搜狗全部通用的提交入口。当前只准备了代码与验证文件，**尚未向 IndexNow 提交**。[IndexNow 官方协议](https://www.indexnow.org/documentation)、[官方 FAQ](https://www.indexnow.org/faq)
 
 提交后分别记录各平台的验证结果、提交时间、抓取/索引状态及上述目标词的展示和点击。HTTP `200`、本地结构检查、伪装爬虫 User-Agent 的请求成功，都不能作为真实爬虫已抓取或搜索已收录的证据；以平台报告和经身份核实的服务器爬虫日志交叉确认。抓取、索引和关键词展示是不同阶段，不重复提交来催促排名。搜狗关于文本内容、页面标题和原创信息的要求见[官方站长指南](https://help.sogou.com/guide.html)。
 
